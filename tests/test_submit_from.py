@@ -55,3 +55,17 @@ def test_submit_form():
 
     # Проверяем, что форма отправлена
     browser.element('#example-modal-sizes-title-lg').should(have.text('Thanks for submitting the form'))
+    browser.element('.table-responsive').all('td').should(
+        have.texts(
+            'Student Name', 'Michael Rodionov',
+            'Student Email', 'jaosnjgotnasgnon@asnfomnoas.weq',
+            'Gender', 'Male',
+            'Mobile', '0123456789',
+            'Date of Birth', '11 April,1997',
+            'Subjects', 'English, Chemistry',
+            'Hobbies', '',
+            'Picture', '',
+            'Address', 'Russia, Moscow, st.Pushkina, h.23',
+            'State and City', 'Haryana Panipat'
+        )
+    )
